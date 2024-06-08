@@ -1,28 +1,14 @@
-const { faker } = require('@faker-js/faker');
+import { faker } from '@faker-js/faker';
 ('use strict');
 
-const boilerManufacturers = [
-  'Nike',
-  'Adidas',
-  'Puma',
-  'New Balance',
-];
+const boilerManufacturers = ['Nike', 'Adidas', 'Puma', 'New Balance'];
 
-const partsManufacturers = [
-  '36',
-  '37',
-  '38',
-  '39',
-  '40',
-  '41',
-  '42',
-  '43',
-]
+const partsManufacturers = ['36', '37', '38', '39', '40', '41', '42', '43'];
 
 /** @type {import('sequelize-cli').Migration} */
-module.exports = {
-  async up(queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('BoilerParts',
+export async function up(queryInterface) {
+  return queryInterface.bulkInsert(
+    'BoilerParts',
     [...Array(100)].map(() => ({
       boiler_manufacturer:
         boilerManufacturers[
@@ -37,8 +23,7 @@ module.exports = {
       description: faker.lorem.sentence(10),
       images: JSON.stringify(
         [...Array(7)].map(
-          () =>
-            `${faker.image.technics()}?random=${faker.random.numeric(30)}`,
+          () => `${faker.image.technics()}?random=${faker.random.numeric(30)}`,
         ),
       ),
       vendor_code: faker.internet.password(),
@@ -49,11 +34,9 @@ module.exports = {
       compatibility: faker.lorem.sentence(7),
       createdAt: new Date(),
       updatedAt: new Date(),
-      })),
-    );
-  },
-
-  async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('BoilerParts', null, {});
-  }
-};
+    })),
+  );
+}
+export async function down(queryInterface) {
+  return queryInterface.bulkDelete('BoilerParts', null, {});
+}
