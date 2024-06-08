@@ -9,7 +9,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { databaseConfig } from 'src/config/configuration';
 import { SequelizeConfigService } from 'src/config/sequelizeConfig.service';
 import { User } from 'src/users/users.model';
-import { UsersModule } from 'src/users/users.module';
 import { AuthModule } from 'src/auth/auth.module';
 
 const mockedUser = {
