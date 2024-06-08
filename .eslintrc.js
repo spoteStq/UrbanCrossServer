@@ -17,10 +17,10 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-    'prettier/prettier':[
+    'prettier/prettier': [
       'error',
       {
-        'endOfLie': 'auto',
+        'endOfLine': 'auto',
       }
     ],
     '@typescript-eslint/interface-name-prefix': 'off',

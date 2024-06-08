@@ -5,7 +5,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { BoilerParts } from './boiler-parts.model';
 
 @Module({
-  imports: [ SequelizeModule.forFeature([BoilerParts])],
+  imports: [SequelizeModule.forFeature([BoilerParts])],
   controllers: [BoilerPartsController],
   providers: [BoilerPartsService],
   exports: [BoilerPartsService],
