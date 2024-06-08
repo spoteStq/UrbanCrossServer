@@ -15,9 +15,11 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
       username.toLowerCase(),
       password,
     );
+
     if (!user) {
       throw new UnauthorizedException();
     }
+
     return user;
   }
 }

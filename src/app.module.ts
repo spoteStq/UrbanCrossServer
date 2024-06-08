@@ -22,7 +22,7 @@ import { PaymentModule } from './payment/payment.module';
     AuthModule,
     BoilerPartsModule,
     ShoppingCartModule,
-    PaymentModule
+    PaymentModule,
   ],
 })
 export class AppModule {}
