@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: ['http://localhost:3001', 'https://urbancrossclient.onrender.com'],
+    origin: ['http://localhost:3001', 'https://urban-cross-client.vercel.app'],
   });
 
   const config = new DocumentBuilder()
