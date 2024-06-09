@@ -15,7 +15,7 @@ async function bootstrap() {
     }),
   );
   app.use(passport.initialize());
-  app.use(passport.session());
+  // app.use(passport.session());
 
   app.enableCors({
     credentials: true,
